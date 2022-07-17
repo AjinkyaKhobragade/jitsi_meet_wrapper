@@ -27,4 +27,9 @@ class JitsiMeetWrapper {
     return await JitsiMeetWrapperPlatformInterface.instance
         .joinMeeting(options: options, listener: listener);
   }
+  closeMeeting() {
+    debugPrint("Closing the meeting");
+    api?.dispose();
+    api = null;
+  }
 }
